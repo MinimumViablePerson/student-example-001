@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body::-webkit-scrollbar{
+        width: 16px;
+    }
+
+        
+    
+    body::-webkit-scrollbar-thumb{
+        /* background: #888;  */
+        background:#196bd7;
+        border-radius: 10px;
+        animation: scrollbar1 5s infinite;
+    }
+    @keyframes scrollbar1{
+        0%{background: blue;}
+        25%{background: red;}
+        100%{background: chartreuse;}
+    } 
+
+button{
+    cursor: pointer;
+}
+/* Header */
+header {
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    padding: 0.7rem 1.5rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 150px 1fr 8fr 1fr 220px;
+}
+
+header button.header-button{
+    height: 39px;
+    border: none;
+    /* outline: 1px solid olive; */
+}
+.menu.logo{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    
+}
+.menu.logo button{
+    background-color: white;
+    padding: 0.5rem;
+    padding-left: 0;
+}
+.search-box{
+    padding-left: 2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 60px 40px;
+}
+#magnifying-glass{
+    padding: 00.5rem;
+    background-color: #f8f8f8;
+    outline: 1px solid #d3d3d3;
+}
+.search-box input{
+    height: 39px;
+    outline: 1px solid #d3d3d3;
+    border: none;
+    font-size: 18px; 
+    padding-left: 1rem;
+}
+.search-box button#mic{
+    margin-left: 6px;
+    border-radius: 50%;
+    padding: 0.6rem 0.4rem;
+    background-color: #f9f9f9;
+}
+.search-box input::placeholder{
+    
+    font-size: 1rem;
+    color: #888888;
+}
+.right-buttons{
+    display: grid;
+    grid-template-columns: 60px 60px 100px;
+}
+.right-buttons button{
+    background-color: white;
+    padding: 0.3rem;
+}
+button.sign-in{
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    /* gap: 0.5rem; */
+    color: #196bd7;
+    font-weight: bold;
+    outline: 1px solid #196bd7;
+}
+button.sign-in svg{
+     fill: #196bd7;
+}
+
+/* End of header */
+/* Main  */
+
+
+main{
+    display: grid;
+    grid-template: 
+    'sidebar  topics '53px
+    'sidebar  videos '1fr/
+    250px 1fr;
+}
+main section.topics{
+    grid-area: topics;
+    overflow-x: scroll;
+    border-top: 2px solid #e5e5e5;
+    position: sticky;
+    background-color: white;
+    top: 61.4px;
+    border-bottom: 2px solid #e5e5e5;
+}
+main section.topics::-webkit-scrollbar{
+    height: 3px;
+}
+main section.topics::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+    display: none; 
+}
+main section.topics:hover::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+    display: block;
+}
+main section.videos{
+    grid-area: videos;
+    
+    background-color: #f9f9f9;
+    }
+main section.sidebar{
+    padding-right: 0.3rem;
+    grid-area: sidebar;
+    /* outline:1px solid black; */
+    overflow-y: scroll;
+    height: 92vh;
+    position: fixed;
+    width: 250px;
+}
+
+main section.sidebar::-webkit-scrollbar{
+    width: 7px;
+}
+
+main section.sidebar::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    display: none;
+  }
+
+  main section.sidebar:hover::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+    display: block;
+  }
+/* End of Main */
+/* Topics */
+
+main section.topics ul{
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    height: 100%;
+    gap: 1rem;
+    padding-left: 1rem    ;
+}
+main section.topics ul li a{
+    text-decoration: none;
+    color: black;
+    
+    
+}
+main section.topics ul li{
+    border-radius: 50px;
+    background-color: #f2f2f2;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #e0e0e0;
+    min-width: max-content;
+}
+main section.topics ul li:first-child{
+    background-color: black;
+    
+    
+}
+main section.topics ul li:first-child a{
+    color: white;
+}
+
+/* End of Topics */
+/* Sidebar */
+.sidebar ul li a{
+    height: 45px;
+    gap: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    /* outline: 1px solid black; */
+    text-decoration: none;
+    color: black;
+    padding: 0.2rem;
+display: grid;
+grid-template-columns: 60px auto;
+justify-content: start;
+align-items: center;
+}
+section.sidebar ul li#selected{
+    background-color: #e5e5e5;
+}
+section.sidebar ul li#selected:hover{
+    background-color: #b6b6b68f;
+}
+section.sidebar ul li:hover:not(ul.about li){
+    background-color: #e5e5e585;
+}
+.sidebar ul li a svg{
+    padding: 0.3rem;
+}
+.sidebar p{
+    /* text-align: center; */
+    padding: 1rem 1.5rem;
+}
+.sidebar button{
+    
+    height: 39px;
+    border: none;
+    background-color: white;
+    padding: 0.3rem;
+    margin-left:  1.5rem;
+    margin-bottom: 1rem;
+    width: 100px;
+}
+.sidebar .about li a, .about li{
+    display: inline;
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
+    color: #606060;
+}
+.sidebar .about{
+    
+    padding: 1rem;
+}
+.sidebar ul li a img{
+    padding: 0.3rem;
+    justify-self: center;
+    width: 33px;    
+    height: 33px;
+    border-radius: 50%;
+}
+
+ul.best-of li a{
+    padding: 0 0.2rem;
+    height: 40px;
+}
+ul.best-of li:first-child, .more li:first-child{
+    padding: 1rem 1.3rem;
+    color: #606060;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+ul.browse{
+    padding: 0.4rem 0;
+}
+
+/* End of sidebar */
+/* Videos */
+section.normal{
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(271.98px, 1fr));
+
+}
+.single-vid a img{
+    width: 100%;
+}
+
+video{
+    display: none;
+}
+
+ .single-vid:hover video{
+    display: inline;
+    width: 100%;
+  
+}
+.single-vid:hover a > img{
+    display: none;
+}
+.single-vid div.vid-info{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+.single-vid div.vid-info img{
+    border-radius: 50%;
+}
+.single-vid .vid-info div.ellipsis{
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+    font-size: 14px;
+    font-weight: 700;
+    height: auto;
+}
+.single-vid .vid-info div.ellipsis svg{
+    height: 25px;
+    display: none;
+}
+
+
+.single-vid .vid-info div span:nth-child(2) + svg{
+    width: 15px;
+    display: inline;
+    padding-top: 0.2rem;
+    vertical-align: bottom;
+}
+.single-vid .vid-info div span:nth-child(2){
+    font-size: small;
+    color: #606060;
+    
+}
+.single-vid .vid-info div p{
+    font-size: small;
+    padding-top: 0.4rem;
+    color: #606060;
+}
+.single-vid a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.single-vid:hover .vid-info div.ellipsis svg{
+    display: block;
+}
+
+@media screen  and (max-width:1315px) {
+    section.sidebar ul li a{
+        display: grid;
+        grid-template-columns: 72px;
+            place-items: center;
+            height: 59px;
+           font-size: 11px;
+            margin-bottom: 1rem;
+    }
+    main{
+        display: grid;
+        grid-template: 
+        'sidebar  topics '53px
+        'sidebar  videos '1fr/
+        85px 1fr;
+    }
+    section.sidebar ul li#selected{
+        background-color: white;
+    }
+    main section.sidebar{
+
+        padding-right: 0rem;
+        /* outline:1px solid black; */
+
+        width: 85px;
+    }
+    section.sidebar *:not(ul:first-child, ul:first-child li,ul:first-child li a svg, ul:first-child li a,ul:first-child li a svg g, ul:first-child li a svg g path){
+        display: none;
+    }
+}
+
+@media screen  and (max-width:800px) {
+    header div{
+        display: none;
+        
+    }
+    header{
+        grid-template-columns: 150px 1fr 220px;
+    }
+    header .search-box{
+        padding: 0;
+        margin-left: 1rem;
+    }
+    .search-box input{
+        min-width: 100px;
+    }
+}
+@media screen  and (max-width:650px) {
+    .search-box input{
+        display: none;
+    }
+    .search-box button#mic{
+      background-color: white;
+      border-radius: 0;
+    }
+    .search-box button#mic svg{
+        height: 100%;
+        width: 100%;
+    }
+    .search-box{
+        grid-template-columns: 45px 45px;
+        justify-content: end;
+    }
+    #magnifying-glass{
+        background-color: white;
+        outline: none;
+    }
+}
